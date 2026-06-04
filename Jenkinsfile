@@ -41,6 +41,7 @@ pipeline {
                         steps {
                             // Integration tests with Playwright
                             sh 'npx playwright test'
+                        }
                     }
                 }
             }
