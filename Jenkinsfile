@@ -58,5 +58,21 @@ pipeline {
                 echo 'Mock deployment was successful!'
             }
         }
+
+        stage('e2e') {
+            agent {
+                docker {
+                    image 'mcr.microsoft.com/playwright:v1.54.2-jammy'
+                }
+            }
+            environment {
+                // Set environment variables for Playwright tests if needed
+                E2E_BASE_URL = 'https://spanish-cartds.netlify.app'
+            }
+            steps {
+                // End-to-end tests with Playwright
+                sh 'npx playwright test --reporter=html'
+            }
+        }
     }
 }
