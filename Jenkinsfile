@@ -16,7 +16,7 @@ pipeline {
                         }
                     }
                     steps {
-                        sh 'npm ci'
+                        sh 'npm install'
                         sh 'npm run build'
                         // Unit tests with Vitest
                         sh 'npx vitest run --reporter=verbose'
