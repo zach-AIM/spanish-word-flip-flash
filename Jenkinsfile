@@ -38,10 +38,10 @@ pipeline {
                             image 'mcr.microsoft.com/playwright:v1.54.2-jammy'
                             reuseNode true
                         }
-                        steps {
-                            // Integration tests with Playwright
-                            sh 'npx playwright test'
-                        }
+                    }
+                    steps {
+                        // Integration tests with Playwright
+                        sh 'npx playwright test'
                     }
                 }
             }
