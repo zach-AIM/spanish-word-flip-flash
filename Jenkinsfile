@@ -6,14 +6,6 @@ pipeline {
     }
 
     stages {
-        stage('build') {
-            agent {
-                docker {
-                    image 'node:22-alpine'
-                }
-            }
-        }
-
         stage('test') {
             parallel {
                 stage('unit tests') {
